@@ -12,9 +12,8 @@ public class Main {
     Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
 
-
-        DataRequest dr = new DataRequest();
-        dr.SaveDataEnter();
+       Main main = new Main();
+       main.SaveDataEnter();
 
     }
 
@@ -53,9 +52,10 @@ public class Main {
         try {
             System.out.println("Enter number phone:");
             String number = scan.nextLine();
-            if (number.equals("")) {
+            if (number.isEmpty()) {
                 throw new RuntimeException("Вводимое значение не может быть пустым,\nпопробуйте снова!");
             }
+            
             numberPhone = Long.parseLong(number);
         } catch (NumberFormatException e) {
             System.out.println("NumberFormatException: Не верный формат, попробуйте снова!");
@@ -82,8 +82,10 @@ public class Main {
         System.out.println("\nFirst name \t- \t" + firstName + "\n" + "Last name \t- \t" + lastName + "\n" + "Middle name \t- \t" + middleName + "\n" + "Year of birth \t- \t" + yearOfBirth + "\n" + "Number phone \t- \t" + numberPhone + "\n" + "Gender   \t- \t" + gender);
     }
 
-    // Метод для соединения всех методов в один
-    private void DataEnter() {
+
+    // Метод для сохранения данных в файл
+    public  void SaveDataEnter() {
+
         EnterFirstName();
         EnterLastName();
         EnterMiddleName();
@@ -91,12 +93,7 @@ public class Main {
         EnterNumberPhone();
         EnterGender();
         OutPutData();
-    }
 
-    // Метод для сохранения данных в файл
-    public void SaveDataEnter() {
-
-        DataEnter();
         String file = "data/" + lastName + ".txt";
         try (FileWriter fw = new FileWriter(file, true)) {
             fw.write("<" + firstName + "> " + "<" + lastName + "> " + "<" + middleName + "> " + "<" + yearOfBirth + "> " + "<" + numberPhone + "> " + "<" + gender + ">\n");
