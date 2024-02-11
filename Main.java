@@ -18,14 +18,14 @@ public class Main {
     }
 
      void EnterFirstName() {
-        System.out.println("Enter first name:");
+        System.out.println("Введите имя:");
         firstName = scan.nextLine();
         if (firstName.equals("")) {
             throw new RuntimeException("Вводимое значение не может быть пустым,\nпопробуйте снова!");
         }
     }
      void EnterLastName() {
-        System.out.println("Enter last name:");
+        System.out.println("Введите фамилию:");
         lastName = scan.nextLine();
         if (lastName.equals("")) {
             throw new RuntimeException("Вводимое значение не может быть пустым,\nпопробуйте снова!");
@@ -33,7 +33,7 @@ public class Main {
     }
 
      void EnterMiddleName() {
-        System.out.println("Enter middle name");
+        System.out.println("Введите отчество");
         middleName = scan.nextLine();
         if (middleName.equals("")) {
             throw new RuntimeException("Вводимое значение не может быть пустым,\nпопробуйте снова!");
@@ -41,7 +41,7 @@ public class Main {
     }
 
     void EnterYearOfBirth() {
-        System.out.println("Enter year of birth:");
+        System.out.println("Введите ваш возраст:");
         yearOfBirth = scan.nextLine();
         if (yearOfBirth.equals("")) {
             throw new RuntimeException("Вводимое значение не может быть пустым,\nпопробуйте снова!");
@@ -50,7 +50,7 @@ public class Main {
 
      void EnterNumberPhone() {
         try {
-            System.out.println("Enter number phone:");
+            System.out.println("Введите ваш номер телефона:");
             String number = scan.nextLine();
             if (number.isEmpty()) {
                 throw new RuntimeException("Вводимое значение не может быть пустым,\nпопробуйте снова!");
@@ -63,7 +63,7 @@ public class Main {
     }
 
     private void EnterGender() {
-        System.out.println("Enter gender (f, m):");
+        System.out.println("Введите ваш пол (f, m):");
         String gen;
         String f = "f";
         String m = "m";
@@ -79,7 +79,7 @@ public class Main {
     }
 
     private void OutPutData() {
-        System.out.println("\nFirst name \t- \t" + firstName + "\n" + "Last name \t- \t" + lastName + "\n" + "Middle name \t- \t" + middleName + "\n" + "Year of birth \t- \t" + yearOfBirth + "\n" + "Number phone \t- \t" + numberPhone + "\n" + "Gender   \t- \t" + gender);
+        System.out.println("\nИмя \t- \t" + firstName + "\n" + "Фамилия \t- \t" + lastName + "\n" + "Отчество \t- \t" + middleName + "\n" + "Возраст \t- \t" + yearOfBirth + "\n" + "Номер телефона \t- \t" + numberPhone + "\n" + "под   \t- \t" + gender);
     }
 
 
